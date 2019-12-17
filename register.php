@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registrate on this Website</title>
+    <title>Register on this Website</title>
 </head>
 <body>
 <?php
@@ -43,7 +43,7 @@ if(Input::exists()) {
             try {
                 $user->create(array(
                     'username' => Input::get('username'),
-                    'password' => Hash::make(Input::get('password'), $salt),
+                    'password' => Hash::make(Input::get('pwd'), $salt),
                     'salt' => $salt,
                     'name' => Input::get('name'),
                     'joined' => date('Y-m-d H:i:s'),

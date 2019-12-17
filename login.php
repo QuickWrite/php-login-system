@@ -24,7 +24,7 @@ if(Input::exists()) {
             $login = $user->login(Input::get('username'), Input::get('pwd'));
 
             if($login) {
-                echo 'Sucess';
+                echo 'Success';
             } else {
                 echo '<p>Login failed</p>';
             }

@@ -29,10 +29,9 @@ class User {
         $user = $this->find($username);
         
         if($user) {
-            echo $this->data()->password . '<br>';
-            echo Hash::make($password, $this->data()->salt);
+            
             if($this->data()->password === Hash::make($password, $this->data()->salt)) {
-                echo 'ok';
+                return true;
             }
         }
 

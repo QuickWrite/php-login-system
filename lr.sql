@@ -54,7 +54,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(20) COLLATE utf8mb4_general_nopad_ci NOT NULL,
   `password` varchar(64) COLLATE utf8mb4_general_nopad_ci NOT NULL,
-  `salt` varchar(32) COLLATE utf8mb4_general_nopad_ci NOT NULL,
+  `salt` varchar(64) COLLATE utf8mb4_general_nopad_ci NOT NULL,
   `name` text COLLATE utf8mb4_general_nopad_ci NOT NULL,
   `joined` datetime NOT NULL,
   `group` int(11) NOT NULL
