@@ -23,3 +23,12 @@ spl_autoload_register(function($class) {
 });
 
 require_once 'functions/sanitize.php';
+
+if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))) {
+  echo $hash = Cookie::get(Config::get('remember/cookie_name'));
+  $hashCheck = DB::getInstance()->get('users_session', array('hash', '=', $hash));
+
+  if($hashCheck->count()) {
+    echo 'Hash matches, log user in<br>';
+  }
+}
