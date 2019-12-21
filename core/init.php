@@ -29,6 +29,7 @@ if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Confi
   $hashCheck = DB::getInstance()->get('users_session', array('hash', '=', $hash));
 
   if($hashCheck->count()) {
-    echo 'Hash matches, log user in<br>';
+    $user = new User($hashCheck->first()->user_id);
+    $user->login();
   }
 }
